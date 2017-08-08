@@ -15,7 +15,7 @@ phases:
             - ng build --prod
     post_build:
          commands:
-            - cp appspec.yml install_dependencies  start_server stop_server dist
+            - cp appspec.yml install_dependencies  start_server stop_server file_replace dist
             - aws s3 cp dist s3://s3code --recursive
             - echo Build completed on `date`
 artifacts:
