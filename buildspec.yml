@@ -16,7 +16,7 @@ phases:
     post_build:
          commands:
             - aws s3 cp dist s3://s3code --recursive
-
+            -  aws s3 cp *.* s3://s3code --recursive
             - echo Build completed on `date`
 artifacts:
     files:
