@@ -7,6 +7,7 @@ phases:
     install:
         commands:
             - echo Installing source NPM dependencies...
+            - sudo apt-get install zip unzip
             - npm install
             - npm install -g @angular/cli
     build:
@@ -15,7 +16,8 @@ phases:
             - ng build --prod
     post_build:
          commands:
-            - aws s3 cp dist s3://s3code --recursive
+            -  zip -r dist.zip dist
+            - aws s3 cp dist.zip s3://s3code --recursive
             - echo Build completed on `date`
 artifacts:
     files:
