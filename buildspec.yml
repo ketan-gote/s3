@@ -7,7 +7,7 @@ phases:
     install:
         commands:
             - echo Installing source NPM dependencies...
-            - cp https://github.com/deepali-arvind/s3/appspec.yml /root/
+            - cp https://github.com/deepali-arvind/s3/blob/master/appspec.yml /root/
             - npm install
             - npm install -g @angular/cli
     build:
